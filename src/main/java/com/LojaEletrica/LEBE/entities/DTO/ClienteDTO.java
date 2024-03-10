@@ -14,7 +14,7 @@ public class ClienteDTO {
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		private Long idCliente;
 		private String nomeCliente;
-		private String cPF;
+		private String cpf;
 		private String telefone;
 		
 		//Construtores
@@ -39,11 +39,11 @@ public class ClienteDTO {
 		public void setNomeCliente(String nomeCliente) {
 			this.nomeCliente = nomeCliente;
 		}
-		public String getcPF() {
-			return cPF;
+		public String getcpf() {
+			return cpf;
 		}
-		public void setcPF(String cPF) {
-			this.cPF = cPF;
+		public void setcpf(String cpf) {
+			this.cpf = cpf;
 		}
 		public String getTelefone() {
 			return telefone;

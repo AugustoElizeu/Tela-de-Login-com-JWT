@@ -2,6 +2,7 @@ package com.LojaEletrica.LEBE.entities.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,7 +12,9 @@ import com.LojaEletrica.LEBE.entities.repositories.ClienteRepository;
 
 @Service
 public class ClienteService {
-private ClienteRepository cr;
+	
+	@Autowired
+    private ClienteRepository cr;
 	
 	@Transactional(readOnly = true)
 	public List<ClienteDTO> findAll(){

@@ -20,7 +20,7 @@ public class Cliente implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idCliente;
 	private String nomeCliente;
-	private String cPF;
+	private String cpf;
 	private String telefone;
 	
 	//Construtores
@@ -28,11 +28,11 @@ public class Cliente implements Serializable {
 		
 	}
 	
-	public Cliente(Long idCliente, String nomeCliente, String cPF, String telefone) {
+	public Cliente(Long idCliente, String nomeCliente, String cpf, String telefone) {
 		super();
 		this.idCliente = idCliente;
 		this.nomeCliente = nomeCliente;
-		this.cPF = cPF;
+		this.cpf = cpf;
 		this.telefone = telefone;
 	}
 
@@ -52,12 +52,12 @@ public class Cliente implements Serializable {
 		this.nomeCliente = nomeCliente;
 	}
 
-	public String getcPF() {
-		return cPF;
+	public String getcpf() {
+		return cpf;
 	}
 
-	public void setcPF(String cPF) {
-		this.cPF = cPF;
+	public void setcpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 	public String getTelefone() {
