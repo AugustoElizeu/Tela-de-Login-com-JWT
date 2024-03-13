@@ -6,12 +6,8 @@ import org.springframework.beans.BeanUtils;
 
 import com.LojaEletrica.LEBE.entities.Cliente;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-
 public class ClienteDTO {
-	//Atributos
-		@GeneratedValue(strategy=GenerationType.IDENTITY)
+		//Atributos
 		private Long idCliente;
 		private String nomeCliente;
 		private String cpf;
