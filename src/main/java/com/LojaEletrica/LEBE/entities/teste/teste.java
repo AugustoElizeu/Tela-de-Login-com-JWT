@@ -20,8 +20,8 @@ public class teste implements CommandLineRunner {
 	@Override
     public void run(String... args) {
 		
-		Cliente c1 = new Cliente(null,"Sugoma","3214124214","123213213");
-		Cliente c2 = new Cliente(null,"BRENNO","BAITOLA","GAY");
+		Cliente c1 = new Cliente(null,"Sugoma",10485435799L,"123213213",23085600L,"RJ","Rua","110");
+		Cliente c2 = new Cliente(null,"BRENNO",10485435799L,"123213213",23085600L,"RJ","Rua","110");
 		cr.saveAll(Arrays.asList(c1,c2));
 		
 	}
