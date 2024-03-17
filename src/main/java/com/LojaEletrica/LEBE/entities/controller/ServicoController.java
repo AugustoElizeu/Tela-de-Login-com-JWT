@@ -8,24 +8,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.LojaEletrica.LEBE.entities.DTO.PecaDTO;
-import com.LojaEletrica.LEBE.entities.services.PecaService;
+import com.LojaEletrica.LEBE.entities.DTO.ServicoDTO;
+import com.LojaEletrica.LEBE.entities.services.ServicoService;
 
 @RestController
-@RequestMapping(value="/pecas")
-public class PecaController {
+@RequestMapping(value="/servicos")
+public class ServicoController {
 
 	@Autowired
-	private PecaService servico;
+	private ServicoService servico;
 	
 	@GetMapping(value="/{id}")
-	public PecaDTO findById(@PathVariable Long id) {
-		PecaDTO result = servico.findById(id);
+	public ServicoDTO findById(@PathVariable Long id) {
+		ServicoDTO result = servico.findById(id);
 		return result;
 	}
 	@GetMapping
-	public List<PecaDTO> findAllGames() {
-		List<PecaDTO> result = servico.findAll();
+	public List<ServicoDTO> findAllGames() {
+		List<ServicoDTO> result =servico.findAll();
 		return result;
 	}
 	

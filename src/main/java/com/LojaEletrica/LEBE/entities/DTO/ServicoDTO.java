@@ -1,18 +1,18 @@
-package com.LojaEletrica.LEBE.entities;
+package com.LojaEletrica.LEBE.entities.DTO;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+import org.springframework.beans.BeanUtils;
+
+import com.LojaEletrica.LEBE.entities.Servico;
+
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "Servico")
-public class Servico implements Serializable {
+public class ServicoDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
  
@@ -25,16 +25,13 @@ public class Servico implements Serializable {
 	private Double valorServico;
 	private String Descricao;
 	
-	public Servico() {
+	public ServicoDTO() {
 		
 	}
 
-	public Servico(Long servicoId, String nomeServico, Double valorServico, String descricao) {
+	public ServicoDTO(Servico servico) {
 		super();
-		this.servicoId = servicoId;
-		this.nomeServico = nomeServico;
-		this.valorServico = valorServico;
-		Descricao = descricao;
+		BeanUtils.copyProperties(servico, this);
 	}
 
 	public Long getservicoId() {
@@ -82,7 +79,7 @@ public class Servico implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Servico other = (Servico) obj;
+		ServicoDTO other = (ServicoDTO) obj;
 		return Objects.equals(nomeServico, other.nomeServico) && Objects.equals(servicoId, other.servicoId);
 	}
 	

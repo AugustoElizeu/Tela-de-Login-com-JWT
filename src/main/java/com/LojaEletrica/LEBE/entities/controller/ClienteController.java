@@ -16,16 +16,16 @@ import com.LojaEletrica.LEBE.entities.services.ClienteService;
 public class ClienteController {
 
 	@Autowired
-	private ClienteService cs;
+	private ClienteService servico;
 	
 	@GetMapping(value="/{id}")
 	public ClienteDTO findById(@PathVariable Long id) {
-		ClienteDTO result = cs.findById(id);
+		ClienteDTO result = servico.findById(id);
 		return result;
 	}
 	@GetMapping
 	public List<ClienteDTO> findAllGames() {
-		List<ClienteDTO> result = cs.findAll();
+		List<ClienteDTO> result = servico.findAll();
 		return result;
 	}
 	

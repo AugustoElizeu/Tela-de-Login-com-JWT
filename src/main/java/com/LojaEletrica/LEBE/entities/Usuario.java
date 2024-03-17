@@ -20,14 +20,14 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID_Usuario")
 	private Long usuarioId;
-	private Long apelido;
-	private Long senha;
+	private String apelido;
+	private String senha;
 	
 	
 	public Usuario() {
 		
 	}
-	public Usuario(Long usuarioId, Long apelido, Long senha) {
+	public Usuario(Long usuarioId, String apelido, String senha) {
 		super();
 		this.usuarioId = usuarioId;
 		this.apelido = apelido;
@@ -39,16 +39,16 @@ public class Usuario implements Serializable {
 	public void setUsuarioId(Long usuarioId) {
 		this.usuarioId = usuarioId;
 	}
-	public Long getApelido() {
+	public String getApelido() {
 		return apelido;
 	}
-	public void setApelido(Long apelido) {
+	public void setApelido(String apelido) {
 		this.apelido = apelido;
 	}
-	public Long getSenha() {
+	public String getSenha() {
 		return senha;
 	}
-	public void setSenha(Long senha) {
+	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 	
@@ -66,6 +66,10 @@ public class Usuario implements Serializable {
 			return false;
 		Usuario other = (Usuario) obj;
 		return Objects.equals(apelido, other.apelido) && Objects.equals(senha, other.senha);
+	}
+	@Override
+	public String toString() {
+		return "Usuario [usuarioId=" + usuarioId + ", apelido=" + apelido + ", senha=" + senha + "]";
 	}
 	
 	

@@ -1,8 +1,12 @@
-package com.LojaEletrica.LEBE.entities;
+package com.LojaEletrica.LEBE.entities.DTO;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
+
+import org.springframework.beans.BeanUtils;
+
+import com.LojaEletrica.LEBE.entities.Ordem;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,7 +17,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="Ordem")
-public class Ordem implements Serializable {
+public class OrdemDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -26,17 +30,12 @@ public class Ordem implements Serializable {
 	private Double Orçamento;
 	private String Descrição;
 	
-	public Ordem() {
+	public OrdemDTO() {
 		
 	}
-	
-	public Ordem(Long ordemId, Integer codigo, Date data, Double orçamento, String descrição) {
-		super();
-		this.ordemId = ordemId;
-		this.codigo = codigo;
-		this.data = data;
-		Orçamento = orçamento;
-		Descrição = descrição;
+
+	public OrdemDTO(Ordem ordem) {
+		BeanUtils.copyProperties(ordem, this);
 	}
 
 	public Long getOrdemId() {
@@ -92,7 +91,7 @@ public class Ordem implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Ordem other = (Ordem) obj;
+		OrdemDTO other = (OrdemDTO) obj;
 		return Objects.equals(data, other.data) && Objects.equals(ordemId, other.ordemId);
 	}
 	
