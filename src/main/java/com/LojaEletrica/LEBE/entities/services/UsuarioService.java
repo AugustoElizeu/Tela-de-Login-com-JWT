@@ -2,6 +2,7 @@ package com.LojaEletrica.LEBE.entities.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,7 @@ public class UsuarioService {
 	}
 	
 	@Transactional(readOnly = true)
-	public Usuario findById(Long usuarioId) {
+	public Usuario findById(String usuarioId) {
 		Optional<Usuario> obj = rep.findById(usuarioId);
 		return obj.orElseThrow(() -> new NotFoundException(usuarioId));
 	}

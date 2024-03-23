@@ -1,6 +1,5 @@
 package com.LojaEletrica.LEBE.entities.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.LojaEletrica.LEBE.entities.Usuario;
-import com.LojaEletrica.LEBE.entities.DTO.UsuarioDTO;
 import com.LojaEletrica.LEBE.entities.repositories.UsuarioRepository;
 import com.LojaEletrica.LEBE.entities.services.UsuarioService;
 
@@ -27,7 +25,7 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioRepository rep;
 	@GetMapping(value="/{id}")
-	public Usuario findById(@PathVariable Long id) {
+	public Usuario findById(@PathVariable String id) {
 		Usuario result = servico.findById(id);
 		return result;
 	}
@@ -39,7 +37,7 @@ public class UsuarioController {
 	}
 	
 	@GetMapping
-	public List<Usuario> findAllGames() {
+	public List<Usuario> findAllUsuarios() {
 		List<Usuario> result = servico.findAll();
 		return result;
 	}

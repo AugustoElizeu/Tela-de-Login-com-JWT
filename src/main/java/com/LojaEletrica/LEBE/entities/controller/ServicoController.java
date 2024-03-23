@@ -19,7 +19,7 @@ public class ServicoController {
 	private ServicoService servico;
 	
 	@GetMapping(value="/{id}")
-	public ServicoDTO findById(@PathVariable Long id) {
+	public ServicoDTO findById(@PathVariable String id) {
 		ServicoDTO result = servico.findById(id);
 		return result;
 	}

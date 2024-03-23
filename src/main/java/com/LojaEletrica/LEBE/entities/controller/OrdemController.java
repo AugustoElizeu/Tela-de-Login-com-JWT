@@ -18,7 +18,7 @@ public class OrdemController {
 	private OrdemService servico;
 	
 	@GetMapping(value="/{id}")
-	public OrdemDTO findById(@PathVariable Long id) {
+	public OrdemDTO findById(@PathVariable String id) {
 		OrdemDTO result = servico.findById(id);
 		return result;
 	}

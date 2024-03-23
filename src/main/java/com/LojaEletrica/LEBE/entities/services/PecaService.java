@@ -23,7 +23,7 @@ public class PecaService {
 	}
 	
 	@Transactional(readOnly = true)
-	public PecaDTO findById(Long PecaId) {
+	public PecaDTO findById(String PecaId) {
 		Peca result = pr.findById(PecaId).get();
 		return new PecaDTO(result);
 	}

@@ -13,4 +13,9 @@ public class WebConfig implements WebMvcConfigurer {
 	            .allowedMethods("*")
 	            .allowedHeaders("*");
 	    }
+	 //Essa configuração é usada para habilitar o suporte a CORS (Cross-Origin Resource Sharing) em sua aplicação Spring Boot. 
+	 //O CORS é um mecanismo de segurança que permite que recursos da web em um navegador sejam solicitados a partir de um domínio 
+	 //diferente do domínio onde o recurso originalmente reside.
+	 
+	 
 }

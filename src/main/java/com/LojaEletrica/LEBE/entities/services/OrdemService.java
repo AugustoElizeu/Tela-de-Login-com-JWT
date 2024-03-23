@@ -23,7 +23,7 @@ public class OrdemService {
 	}
 	
 	@Transactional(readOnly = true)
-	public OrdemDTO findById(Long OrdemId) {
+	public OrdemDTO findById(String OrdemId) {
 		Ordem result = rep.findById(OrdemId).get();
 		return new OrdemDTO(result);
 	}

@@ -19,7 +19,7 @@ public class PecaController {
 	private PecaService servico;
 	
 	@GetMapping(value="/{id}")
-	public PecaDTO findById(@PathVariable Long id) {
+	public PecaDTO findById(@PathVariable String id) {
 		PecaDTO result = servico.findById(id);
 		return result;
 	}

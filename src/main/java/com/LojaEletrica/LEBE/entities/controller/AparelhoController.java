@@ -20,7 +20,7 @@ public class AparelhoController {
 	private AparelhoService servico;
 	
 	@GetMapping(value="/{id}")
-	public AparelhoDTO findById(@PathVariable Long id) {
+	public AparelhoDTO findById(@PathVariable String id) {
 		AparelhoDTO result = servico.findById(id);
 		return result;
 	}

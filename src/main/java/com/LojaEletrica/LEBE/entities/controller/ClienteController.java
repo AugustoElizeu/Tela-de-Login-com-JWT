@@ -19,7 +19,7 @@ public class ClienteController {
 	private ClienteService servico;
 	
 	@GetMapping(value="/{id}")
-	public ClienteDTO findById(@PathVariable Long id) {
+	public ClienteDTO findById(@PathVariable String id) {
 		ClienteDTO result = servico.findById(id);
 		return result;
 	}

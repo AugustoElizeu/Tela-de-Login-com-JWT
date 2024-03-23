@@ -23,7 +23,7 @@ public class AparelhoService {
 	}
 	
 	@Transactional(readOnly = true)
-	public AparelhoDTO findById(Long AparelhoId) {
+	public AparelhoDTO findById(String AparelhoId) {
 		Aparelho result = rep.findById(AparelhoId).get();
 		return new AparelhoDTO(result);
 	}

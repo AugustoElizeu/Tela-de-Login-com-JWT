@@ -23,7 +23,7 @@ public class ServicoService {
 	}
 	
 	@Transactional(readOnly = true)
-	public ServicoDTO findById(Long ServicoId) {
+	public ServicoDTO findById(String ServicoId) {
 		Servico result = rep.findById(ServicoId).get();
 		return new ServicoDTO(result);
 	}

@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.LojaEletrica.LEBE.entities.Aparelho;
 
-public interface AparelhoRepository extends JpaRepository<Aparelho,Long> {
+public interface AparelhoRepository extends JpaRepository<Aparelho,String> {
 
 }

@@ -2,6 +2,7 @@ package com.LojaEletrica.LEBE.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,9 +18,9 @@ public class Servico implements Serializable {
 	private static final long serialVersionUID = 1L;
  
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.UUID)
 	@Column(name="ID_Serviço")
-	private Long servicoId;
+	private UUID servicoId;
 	
 	private String nomeServico;
 	private Double valorServico;
@@ -29,7 +30,7 @@ public class Servico implements Serializable {
 		
 	}
 
-	public Servico(Long servicoId, String nomeServico, Double valorServico, String descricao) {
+	public Servico(UUID servicoId, String nomeServico, Double valorServico, String descricao) {
 		super();
 		this.servicoId = servicoId;
 		this.nomeServico = nomeServico;
@@ -37,11 +38,11 @@ public class Servico implements Serializable {
 		Descricao = descricao;
 	}
 
-	public Long getservicoId() {
+	public UUID getservicoId() {
 		return servicoId;
 	}
 
-	public void setservicoId(Long servicoId) {
+	public void setservicoId(UUID servicoId) {
 		this.servicoId = servicoId;
 	}
 

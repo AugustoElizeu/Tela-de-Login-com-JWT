@@ -2,6 +2,7 @@ package com.LojaEletrica.LEBE.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,9 +18,9 @@ public class Aparelho implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.UUID)
 	@Column(name="ID_Aparelho")
-	private Long aparelhoId;
+	private UUID aparelhoId;
 	private String nomeAparelho;
 	private String marca;
 	private String tipoAparelho;
@@ -28,7 +29,7 @@ public class Aparelho implements Serializable {
 		
 	}
 
-	public Aparelho(Long aparelhoId, String nomeAparelho, String marca, String tipoAparelho) {
+	public Aparelho(UUID aparelhoId, String nomeAparelho, String marca, String tipoAparelho) {
 		super();
 		this.aparelhoId = aparelhoId;
 		this.nomeAparelho = nomeAparelho;
@@ -36,11 +37,11 @@ public class Aparelho implements Serializable {
 		this.tipoAparelho = tipoAparelho;
 	}
 
-	public Long getAparelhoId() {
+	public UUID getAparelhoId() {
 		return aparelhoId;
 	}
 
-	public void setAparelhoId(Long aparelhoId) {
+	public void setAparelhoId(UUID aparelhoId) {
 		this.aparelhoId = aparelhoId;
 	}
 

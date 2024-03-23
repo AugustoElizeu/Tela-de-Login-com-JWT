@@ -3,6 +3,7 @@ package com.LojaEletrica.LEBE.entities;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,9 +19,9 @@ public class Ordem implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.UUID)
 	@Column(name="ID_Ordem")
-	private Long ordemId;
+	private UUID ordemId;
 	private Integer codigo;
 	private Date data;
 	private Double Orçamento;
@@ -30,7 +31,7 @@ public class Ordem implements Serializable {
 		
 	}
 	
-	public Ordem(Long ordemId, Integer codigo, Date data, Double orçamento, String descrição) {
+	public Ordem(UUID ordemId, Integer codigo, Date data, Double orçamento, String descrição) {
 		super();
 		this.ordemId = ordemId;
 		this.codigo = codigo;
@@ -39,11 +40,11 @@ public class Ordem implements Serializable {
 		Descrição = descrição;
 	}
 
-	public Long getOrdemId() {
+	public UUID getOrdemId() {
 		return ordemId;
 	}
 
-	public void setOrdemId(Long ordemId) {
+	public void setOrdemId(UUID ordemId) {
 		this.ordemId = ordemId;
 	}
 

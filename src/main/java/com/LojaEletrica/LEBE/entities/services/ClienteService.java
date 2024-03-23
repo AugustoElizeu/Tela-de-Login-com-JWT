@@ -23,7 +23,7 @@ public class ClienteService {
 	}
 	
 	@Transactional(readOnly = true)
-	public ClienteDTO findById(Long clienteId) {
+	public ClienteDTO findById(String clienteId) {
 		Cliente result = cr.findById(clienteId).get();
 		return new ClienteDTO(result);
 	}

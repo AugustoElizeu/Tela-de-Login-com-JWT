@@ -2,6 +2,7 @@ package com.LojaEletrica.LEBE.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,13 +19,14 @@ public class Cliente implements Serializable {
 	//Atributos
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.UUID)
 	@Column(name="ID_Cliente")
-	private Long idCliente;
+	private UUID idCliente;
+	
 	private String nomeCliente;
-	private Long cpf;
+	private String cpf;
 	private String telefone;
-	private Long cep;
+	private String cep;
 	private String cidade;
 	private String endereço;
 	private String complemento;
@@ -33,8 +35,8 @@ public class Cliente implements Serializable {
 	public Cliente(){
 		
 	}
-	
-	public Cliente(Long idCliente, String nomeCliente, Long cpf, String telefone, Long cep, String cidade,
+
+	public Cliente(UUID idCliente, String nomeCliente, String cpf, String telefone, String cep, String cidade,
 			String endereço, String complemento) {
 		super();
 		this.idCliente = idCliente;
@@ -47,14 +49,11 @@ public class Cliente implements Serializable {
 		this.complemento = complemento;
 	}
 
-
-
-
-	public Long getIdCliente() {
+	public UUID getIdCliente() {
 		return idCliente;
 	}
 
-	public void setIdCliente(Long idCliente) {
+	public void setIdCliente(UUID idCliente) {
 		this.idCliente = idCliente;
 	}
 
@@ -66,11 +65,11 @@ public class Cliente implements Serializable {
 		this.nomeCliente = nomeCliente;
 	}
 
-	public Long getcpf() {
+	public String getcpf() {
 		return cpf;
 	}
 
-	public void setcpf(Long cpf) {
+	public void setcpf(String cpf) {
 		this.cpf = cpf;
 	}
 
@@ -83,11 +82,11 @@ public class Cliente implements Serializable {
 	}
 	
 
-	public Long getCep() {
+	public String getCep() {
 		return cep;
 	}
 
-	public void setCep(Long cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
 
