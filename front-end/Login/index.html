@@ -4,16 +4,18 @@
         <title>Login Lógica Elétrica</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/styleLog.css">
+        <script src="./script/logIn.js" defer></script>
     </head>
     <body>
         <section class="formHolder">
             <h1 style="text-align: center;">Login</h1>
-            <form action="" method="post"></form>
+            <form  method="post">
                 <div class="inputConf">
-                  <input type="text" placeholder="Digite seu nome de Usuario ">
-                  <input type="password" placeholder="Digite sua senha ">
+                  <input type="text" class="apelido" placeholder="Digite seu nome de Usuario ">
+                  <input type="password" class="senha" placeholder="Digite sua senha ">
                 </div>
                 <input type="submit" name="Entrar" class="entrarBut" value="Entrar">
+            </form>
                 <div class="OutrosLogin">
                     <label for="chkboxSave" class="chkboxSave">
                         <input type="checkbox" name="salvarSenha" id="chkboxSave" value="Salvar seu login?"> Salvar seu login?
@@ -21,7 +23,7 @@
                     <a href="#">Esqueceu a senha?</a>
                 </div>
                 <div class="footerForm"> 
-                    <a href="#">Voltar ao Menu</a>
+                    <a href="../Cadastro/cadastro.html">Voltar ir ao cadastro</a>
                 </div>
             </form>
         </section>

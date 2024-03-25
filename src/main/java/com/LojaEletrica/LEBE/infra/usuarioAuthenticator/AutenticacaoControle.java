@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.LojaEletrica.LEBE.entities.Usuario;
+import com.LojaEletrica.LEBE.entities.DTO.LoginResponseDTO;
 import com.LojaEletrica.LEBE.entities.repositories.UsuarioRepository;
+import com.LojaEletrica.LEBE.infra.security.TokenService;
 
 import jakarta.validation.Valid;
 
@@ -23,6 +25,8 @@ public class AutenticacaoControle {
 	private AuthenticationManager authMenager;
 	@Autowired
 	private UsuarioRepository rep;
+	@Autowired
+	private TokenService tokenService;
 	
 	@PostMapping("/login")
 	public ResponseEntity login(@RequestBody @Valid AutenticacaoDTO data) {
@@ -30,7 +34,10 @@ public class AutenticacaoControle {
 		//Isso é uma clase de autenticação do spring security
 		var userPassword = new UsernamePasswordAuthenticationToken(data.apelido(), data.senha());
 		var auth = this.authMenager.authenticate(userPassword);
-		return ResponseEntity.ok().build();
+
+		var token = tokenService.generateToken((Usuario) auth.getPrincipal());
+	
+        return ResponseEntity.ok(new LoginResponseDTO(token));
 	}
 	
 	@PostMapping("/register")

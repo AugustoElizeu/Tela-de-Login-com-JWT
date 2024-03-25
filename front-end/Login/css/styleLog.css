@@ -1,6 +1,6 @@
 body{
     margin:0;
-    background-image: url("/Login/imgs/cad-log-background.jpg");
+    background-image: url("../imgs/cad-log-background.jpg");
     background-size: cover;
 }
 
